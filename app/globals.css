@@ -88,26 +88,18 @@ p {
   gap: 32px;
 }
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 27px;
-  font-weight: 800;
-  line-height: 1.1;
-}
-.brand small {
-  display: block;
-  letter-spacing: 4px;
-  font-size: 9px;
-  font-weight: 400;
-  margin-top: 8px;
-}
-.brand-symbol {
-  font-family: Arial, sans-serif;
-  font-size: 54px;
   line-height: 1;
-  color: var(--primary);
-  transform: rotate(-4deg);
+}
+.brand-logo {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+.site-footer .brand-logo {
+  height: 32px;
+  margin-bottom: 8px;
 }
 .navigation {
   display: flex;
@@ -257,9 +249,11 @@ p {
   align-items: center;
 }
 .hero-bottom > span:first-child {
-  font-family: monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
+  font-family: var(--font-persian), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: normal;
+  color: #a4ad98;
 }
 .orbit-stage {
   position: relative;
@@ -277,14 +271,20 @@ p {
 }
 .orbit-caption {
   position: absolute;
-  top: 14px;
+  top: 18px;
   left: 22px;
-  font: 9px/1.8 monospace;
-  letter-spacing: 1.6px;
-  color: #b7c3a7;
+  font-family: var(--font-persian), sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+  font-weight: 600;
+  letter-spacing: normal;
+  color: #cdd8bc;
+  direction: rtl;
+  text-align: right;
 }
 .orbit-caption span {
-  color: #606858;
+  color: #838e74;
+  font-weight: 400;
 }
 .orbital-system {
   position: absolute;
@@ -395,11 +395,14 @@ p {
 }
 .coordinate {
   position: absolute;
-  bottom: 10px;
+  bottom: 12px;
   left: 22px;
-  font: 8px monospace;
-  letter-spacing: 1.6px;
-  color: #717b63;
+  font-family: var(--font-persian), sans-serif;
+  font-size: 11px;
+  letter-spacing: normal;
+  font-weight: 500;
+  color: #818a75;
+  direction: rtl;
 }
 .orbit-plus {
   position: absolute;
@@ -483,9 +486,12 @@ h3 {
   position: absolute;
   left: 15px;
   bottom: 14px;
-  font: 7px monospace;
-  letter-spacing: 2px;
+  font-family: var(--font-persian), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: normal;
   color: #c1d69a;
+  direction: rtl;
 }
 .step {
   position: absolute;
@@ -575,9 +581,10 @@ h3 {
   margin-bottom: 35px;
 }
 .experience-top span {
-  font-family: monospace;
-  color: #6d7563;
-  font-size: 11px;
+  font-family: var(--font-persian), sans-serif;
+  color: #7b8571;
+  font-size: 14px;
+  font-weight: 700;
 }
 .experience-grid h3 {
   font-size: 21px;
@@ -610,11 +617,15 @@ h3 {
   transform: rotate(-5deg);
 }
 .collaboration-mark span {
-  font: 11px/1.6 monospace;
-  letter-spacing: 3px;
+  font-family: var(--font-persian), sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: normal;
   display: block;
-  direction: ltr;
-  margin-top: 25px;
+  direction: rtl;
+  margin-top: 24px;
+  color: var(--foreground);
 }
 .faq {
   display: grid;
@@ -677,8 +688,11 @@ details p {
   
 }
 .site-footer > small span {
-  font: 9px monospace;
-  letter-spacing: 1px;
+  font-family: var(--font-persian), sans-serif;
+  font-size: 11px;
+  letter-spacing: normal;
+  font-weight: 500;
+  color: #8c9680;
 }
 .page-intro {
   padding-block: 75px 40px;
@@ -750,14 +764,60 @@ details p {
   font-size: 13px;
 }
 .contact-form input,
-.contact-form textarea,
-.contact-form select {
+.contact-form textarea {
   border: 1px solid #48513c;
   background: #151a11;
   border-radius: 6px;
   padding: 13px;
   color: var(--foreground);
   width: 100%;
+}
+.select-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.select-wrapper select,
+.contact-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  border: 1px solid #48513c;
+  background: #151a11;
+  border-radius: 6px;
+  padding-block: 13px;
+  padding-inline-start: 16px;
+  padding-inline-end: 46px;
+  color: var(--foreground);
+  font: inherit;
+  font-family: var(--font-persian), sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.select-wrapper select:hover,
+.contact-form select:hover {
+  border-color: #697a47;
+}
+.select-wrapper select:focus,
+.contact-form select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-color: var(--primary);
+}
+.select-wrapper .select-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+.select-wrapper:hover .select-icon,
+.select-wrapper select:focus ~ .select-icon {
+  color: var(--primary);
 }
 .contact-form textarea {
   resize: vertical;
@@ -844,20 +904,22 @@ details p {
   .container {
     width: calc(100% - 40px);
   }
+  .site-header .container {
+    width: calc(100% - 24px);
+  }
   .header-inner {
     height: 80px;
-    gap: 16px;
+    gap: 12px;
   }
-  .brand {
-    font-size: 24px;
-  }
-  .brand-symbol {
-    font-size: 45px;
+  .brand-logo {
+    height: 30px;
+    width: auto;
   }
   .contact-link {
     margin-inline-start: auto;
-    padding: 10px;
-    
+    padding: 9px 12px;
+    font-size: 11px;
+    white-space: nowrap;
     gap: 8px;
   }
   .menu-toggle {
@@ -908,9 +970,9 @@ details p {
     top: 48%;
   }
   .orbit-caption {
-    top: 0;
-    left: 5px;
-    font-size: 7px;
+    top: 6px;
+    left: 8px;
+    font-size: 10px;
   }
   .label-one {
     top: 68px;
@@ -925,9 +987,9 @@ details p {
     right: 50px;
   }
   .coordinate {
-    font-size: 7px;
-    left: 5px;
-    bottom: 0;
+    font-size: 9px;
+    left: 8px;
+    bottom: 2px;
   }
   .hero-bottom {
     margin-top: 25px;
@@ -937,8 +999,8 @@ details p {
     display: none;
   }
   .hero-bottom > span:first-child {
-    font-size: 7px;
-    letter-spacing: 1px;
+    font-size: 10px;
+    letter-spacing: normal;
   }
   .manifesto-band > .container {
     min-height: 70px;
@@ -1041,7 +1103,7 @@ details p {
     font-size: 11px;
   }
   .site-footer > small span {
-    font-size: 7px;
+    font-size: 10px;
   }
   .page-intro {
     padding-block: 45px 25px;

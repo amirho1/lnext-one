@@ -15,10 +15,10 @@ export function Orbit() {
   return (
     <div className="orbit-stage" aria-hidden="true">
       <div className="orbit-grid" />
-      <div className="orbit-caption" dir="ltr">
-        A SPACE TO EXPLORE
+      <div className="orbit-caption">
+        فضایی برای کاوشِ
         <br />
-        <span>YOUR NEXT POSSIBLE SELF.</span>
+        <span>خودِ بعدیِ تو.</span>
       </div>
       <div className="orbital-system">
         <div className="orbit-ring ring-one" />
@@ -40,8 +40,8 @@ export function Orbit() {
       <span className="orbit-label label-three">
         <i /> مسیرت را بساز
       </span>
-      <span className="coordinate" dir="ltr">
-        35°41′ N . NEXT IS YOURS
+      <span className="coordinate">
+        ۳۵°۴۱′ شمالی · آینده از آنِ توست
       </span>
       <span className="orbit-plus">+</span>
     </div>
@@ -55,7 +55,7 @@ export function EventCard() {
         <div className="step step-two" />
         <div className="step step-three" />
         <span>قدم بعدیِ تو.</span>
-        <small dir="ltr">THE NEXT CHAPTER . 01</small>
+        <small>فصل بعدی · ۰۱</small>
       </div>
       <div className="event-info">
         <span className="eyebrow">اولین تجربه، یک شروع متفاوت</span>
@@ -119,7 +119,7 @@ export function Home() {
         </div>
         <Orbit />
         <div className="hero-bottom">
-          <span dir="ltr">EXPLORE. EXPERIENCE. EVOLVE.</span>
+          <span>کشف کن · تجربه کن · رشد کن</span>
           <a href="#next-event">
             کشف آل‌نکست <MoveDown size={15} />
           </a>
@@ -189,7 +189,7 @@ export function Home() {
             <article key={item.title}>
               <div className="experience-top">
                 <item.icon size={29} strokeWidth={1.2} />
-                <span dir="ltr">0{i + 1}</span>
+                <span>۰{i + 1}</span>
               </div>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
@@ -221,9 +221,9 @@ export function Home() {
         <div className="collaboration-mark" aria-hidden="true">
           <ArrowUpRight width="1em" height="1em" strokeWidth={1} />
           <span>
-            TOGETHER,
+            با هم،
             <br />
-            WE GO NEXT.
+            به سوی آینده.
           </span>
         </div>
       </section>
