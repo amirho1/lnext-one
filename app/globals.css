@@ -96,6 +96,8 @@ p {
   height: 38px;
   width: auto;
   display: block;
+  color: #cff569;
+  flex: none;
 }
 .site-footer .brand-logo {
   height: 32px;
