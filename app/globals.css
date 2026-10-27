@@ -24,7 +24,7 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 30px;
+  scroll-padding-top: 120px;
 }
 body {
   margin: 0;
@@ -78,7 +78,16 @@ p {
   margin-inline: auto;
 }
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--background);
   border-bottom: 1px solid var(--border);
+  transition: background-color 300ms ease, box-shadow 300ms ease;
+}
+.site-header.is-scrolled {
+  background: rgba(16, 18, 15, 0.96);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 .header-inner {
   height: 104px;
@@ -86,6 +95,10 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
+  transition: height 300ms ease;
+}
+.site-header.is-scrolled .header-inner {
+  height: 84px;
 }
 .brand {
   display: inline-flex;
@@ -913,6 +926,9 @@ details p {
     height: 80px;
     gap: 12px;
   }
+  .site-header.is-scrolled .header-inner {
+    height: 72px;
+  }
   .brand-logo {
     height: 30px;
     width: auto;
@@ -934,7 +950,7 @@ details p {
   .navigation.is-open {
     display: flex;
     position: absolute;
-    top: 80px;
+    top: 100%;
     inset-inline: 0;
     z-index: 10;
     background: var(--panel);
